@@ -1,0 +1,38 @@
+body{
+    width: 33%;
+  }
+  #cal{
+      margin: 200px 300px;
+      
+  }
+  table{
+      height: 70%;
+      width: 30%;
+    
+  }
+  #res{
+     border: 2px solid black;
+     background-color: rgb(143, 197, 155);
+     width: 379px;
+     height: 70px;
+     font-size: 25px; 
+  }
+ button{
+  padding: 15px 35px;
+  font-size: 24px;
+  font-weight: bold;
+ }
+
+#btn0,#btn1{
+  background-color: rgb(136, 248, 164);
+  color: red;
+}
+#btnClr,#btnEql{
+  background-color: green;
+  color: white;
+}
+
+#btnSum,#btnSub,#btnMul,#btnDiv{
+  background-color: black;
+  color: red;
+}
