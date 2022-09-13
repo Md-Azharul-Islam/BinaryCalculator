@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+          width: 33%;
+        }
+        #cal{
+            margin: 200px 300px;
+            
+        }
+        table{
+            height: 70%;
+            width: 30%;
+          
+        }
+        #res{
+           border: 2px solid black;
+           background-color: rgb(143, 197, 155);
+           width: 379px;
+           height: 70px;
+           font-size: 25px; 
+        }
+       button{
+        padding: 15px 35px;
+        font-size: 24px;
+        font-weight: bold;
+       }
+
+      #btn0,#btn1{
+        background-color: rgb(136, 248, 164);
+        color: red;
+      }
+      #btnClr,#btnEql{
+        background-color: green;
+        color: white;
+      }
+
+      #btnSum,#btnSub,#btnMul,#btnDiv{
+        background-color: black;
+        color: red;
+      }
+    </style>
+</head>
+<body>
+    <div id="cal">
+        
+        <table id="tb" border = "1">
+            <div id="res"></div>
+            <tr>
+               <td><button id="btn0">0</button></td>
+               <td><button id="btn1">1</button></td>
+               <td><button id="btnClr">C</button></td>
+               <td><button id="btnEql">=</button></td>
+            </tr>
+            
+            <tr>
+               <td><button id="btnSum">+</button></td>
+               <td><button id="btnSub">-</button></td>
+               <td><button id="btnMul">*</button></td>
+               <td><button id="btnDiv">/</button></td>
+            </tr>
+         </table>
+    </div>
+
+    <script>
+       let buttons = document.querySelectorAll("button")
+       let screen = document.getElementById("res")
+
+       for(let items of buttons){
+        items.addEventListener('click',function(e){
+            let value = e.target.innerHTML
+            
+            if(value==="C"){
+               value = ""
+               screen.innerHTML=""
+            }
+            else if(value==="="){
+                 nums = /(\d+)/g
+                 value = eval(screen.innerHTML.replace(nums,'0b$1')).toString()
+                 screen.innerHTML=Number(value).toString(2)
+            }
+            else{
+               screen.innerHTML+=value
+            }
+        })
+       }
+        
+       
+    </script>
+</body>
+</html>
